@@ -17,9 +17,20 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path, include
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView
+)
+
 
 urlpatterns = [
     path('notification/admin/', admin.site.urls),
+    
+    # for API docs
+    path('notification/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('notification/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('notification/redocs/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
 
 
