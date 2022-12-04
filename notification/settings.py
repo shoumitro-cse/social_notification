@@ -134,7 +134,7 @@ REST_FRAMEWORK = {
 
 # for api docs
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Messanger api',
+    'TITLE': 'Notification api',
     'DESCRIPTION': '',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
